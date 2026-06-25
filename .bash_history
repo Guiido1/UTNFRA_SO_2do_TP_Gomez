@@ -501,3 +501,80 @@ ls -la RTA_Examen_20260625/docker/
 vim RTA_Examen_20260625/Punto_C.sh
 cat RTA_Examen_20260625/Punto_C.sh
 history -a
+cp ~/.bash_history .
+git add .
+git commit -m "ADD: Resuelvo Punto C - Docker"
+git push
+ls -la ~/UTN-FRA_SO_Examenes/202406/ansible/
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+find ~/UTN-FRA_SO_Examenes/202406/ansible/roles -type f
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+find ~/UTN-FRA_SO_Examenes/202406/ansible/roles -type f
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/vars/main.yml
+mkdir -p ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates
+vim ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates/datos_alumno.txt.j2
+vim ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates/datos_equipo.txt.j2
+vim ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml
+pwd
+mkdir -p ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates
+vim ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates/datos_alumno.txt.j2
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates/datos_alumno.txt.j2
+vim ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates/datos_equipo.txt.j2
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/templates/datos_equipo.txt.j2
+vim ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml
+cat << 'EOF' > ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml
+---
+# tasks file for 2do_parcial
+
+- name: Crear directorio alumno
+  file:
+    path: /tmp/2do_parcial/alumno
+    state: directory
+    mode: '0755'
+
+- name: Crear directorio equipo
+  file:
+    path: /tmp/2do_parcial/equipo
+    state: directory
+    mode: '0755'
+
+- name: Generar archivo datos_alumno.txt
+  template:
+    src: datos_alumno.txt.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+
+- name: Generar archivo datos_equipo.txt
+  template:
+    src: datos_equipo.txt.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+
+- name: Configurar sudoers sin password para grupo 2PSupervisores
+  copy:
+    content: "%2PSupervisores ALL=(ALL) NOPASSWD: ALL\n"
+    dest: /etc/sudoers.d/2PSupervisores
+    mode: '0440'
+    validate: 'visudo -cf %s'
+EOF
+
+cat ~/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks/main.yml
+cd ~/UTN-FRA_SO_Examenes/202406/ansible/
+sudo ansible-playbook -i inventory/ playbook.yml --connection=local
+cat /tmp/2do_parcial/alumno/datos_alumno.txt
+cat /tmp/2do_parcial/equipo/datos_equipo.txt
+cat /etc/sudoers.d/2PSupervisores
+sudo cat /etc/sudoers.d/2PSupervisores
+cat << 'EOF' > ~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625/Punto_D.sh
+cd ~/UTN-FRA_SO_Examenes/202406/ansible/
+sudo ansible-playbook -i inventory/ playbook.yml --connection=local
+cat /tmp/2do_parcial/alumno/datos_alumno.txt
+cat /tmp/2do_parcial/equipo/datos_equipo.txt
+sudo cat /etc/sudoers.d/2PSupervisores
+EOF
+
+mkdir -p ~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625/ansible
+cp -r ~/UTN-FRA_SO_Examenes/202406/ansible/roles ~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625/ansible/
+cp ~/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml ~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625/ansible/
+cd ~/UTNFRA_SO_2do_TP_Gomez
+history -a

@@ -1,0 +1,31 @@
+---
+# tasks file for 2do_parcial
+
+- name: Crear directorio alumno
+  file:
+    path: /tmp/2do_parcial/alumno
+    state: directory
+    mode: '0755'
+
+- name: Crear directorio equipo
+  file:
+    path: /tmp/2do_parcial/equipo
+    state: directory
+    mode: '0755'
+
+- name: Generar archivo datos_alumno.txt
+  template:
+    src: datos_alumno.txt.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+
+- name: Generar archivo datos_equipo.txt
+  template:
+    src: datos_equipo.txt.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+
+- name: Configurar sudoers sin password para grupo 2PSupervisores
+  copy:
+    content: "%2PSupervisores ALL=(ALL) NOPASSWD: ALL\n"
+    dest: /etc/sudoers.d/2PSupervisores
+    mode: '0440'
+    validate: 'visudo -cf %s'
