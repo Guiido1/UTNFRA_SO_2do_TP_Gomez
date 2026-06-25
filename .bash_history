@@ -416,3 +416,8 @@ cp /usr/local/bin/GomezAltaUser-Groups.sh ~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20
 cp /usr/local/bin/GomezAltaUser-Groups.sh ~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625/GomezAltaUser-Groups.sh
 history -a
 cd ~/UTNFRA_SO_2do_TP_Gomez
+cp ~/.bash_history .
+git add .
+git commit -m "ADD: Resuelvo Punto B - Alta de usuarios y grupos"
+git push
+git status
