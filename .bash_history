@@ -584,3 +584,11 @@ git commit -m "ADD: Resuelvo Punto D - Ansible"
 git status
 cd ~/UTNFRA_SO_2do_TP_Gomez
 history -a
+cp ~/.bash_history .
+git add .
+git status
+git commit -m "ADD: Resuelvo Punto D - Ansible"
+git push
+cd ~/UTNFRA_SO_2do_TP_Gomez
+cp -r ~/UTN-FRA_SO_Examenes/202406 ~/UTNFRA_SO_2do_TP_Gomez/
+history -a
