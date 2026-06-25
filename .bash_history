@@ -578,3 +578,9 @@ cp -r ~/UTN-FRA_SO_Examenes/202406/ansible/roles ~/UTNFRA_SO_2do_TP_Gomez/RTA_Ex
 cp ~/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml ~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625/ansible/
 cd ~/UTNFRA_SO_2do_TP_Gomez
 history -a
+cp ~/.bash_history .
+git add .
+git commit -m "ADD: Resuelvo Punto D - Ansible"
+git status
+cd ~/UTNFRA_SO_2do_TP_Gomez
+history -a
