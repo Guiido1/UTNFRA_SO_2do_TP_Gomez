@@ -421,3 +421,83 @@ git add .
 git commit -m "ADD: Resuelvo Punto B - Alta de usuarios y grupos"
 git push
 git status
+cp ~/.bash_history .
+git add .
+git status
+git commit -m "ADD: Resuelvo Punto B - Alta de usuarios y grupos"
+git push
+ls -la ~/UTN-FRA_SO_Examenes/202406/docker/
+cat ~/UTN-FRA_SO_Examenes/202406/docker/index.html
+vim ~/UTN-FRA_SO_Examenes/202406/docker/index.html
+sed -i 's/Tu-Nombre Tu-Apellido/Guido Gomez/; s/Tu-Division/116/' ~/UTN-FRA_SO_Examenes/202406/docker/index.html
+cat ~/UTN-FRA_SO_Examenes/202406/docker/index.html
+cd ~/UTN-FRA_SO_Examenes/202406/docker/
+vim Dockerfile
+cat Dockerfile
+sudo docker build -t web1-gomez .
+sudo docker login -u guidogomez
+sudo docker tag web1-gomez guidogomez/web1-gomez
+sudo docker push guidogomez/web1-gomez
+d ~/UTN-FRA_SO_Examenes/202406/docker/
+cd ~/UTN-FRA_SO_Examenes/202406/docker/
+vim run.sh
+chmod +x run.sh
+./run.sh
+curl localhost:8080
+cd ~/UTNFRA_SO_2do_TP_Gomez
+sudo pvcreate /dev/sdc1
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-173-generic x86_64)
+sudo pvcreate /dev/sdc1
+To see these additional updates run: apt list --upgradable
+2 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+New release '24.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+Last login: Thu Jun 25 10:44:26 2026 from 10.0.2.2
+vagrant@Parcial:~$ su guido
+Password:
+guido@Parcial:/home/vagrant$ cd
+guido@Parcial:~$ cd UTNFRA_SO_2do_TP_Gomez/
+guido@Parcial:~/UTNFRA_SO_2do_TP_Gomez$ df -h | grep -E "work|docker"
+/dev/mapper/vg_datos-lv_workareas  1.5G   24K  1.4G   1% /work
+/dev/mapper/vg_datos-lv_docker     3.5M  232K  2.8M   8% /var/lib/docker
+guido@Parcial:~/UTNFRA_SO_2do_TP_Gomez$ swapon --show
+NAME      TYPE      SIZE USED PRIO
+/dev/dm-2 partition 512M   0B   -2
+guido@Parcial:~/UTNFRA_SO_2do_TP_Gomez$ cd RTA_Examen_20260625/
+guido@Parcial:~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625$ sudo vim Punto_A.sh
+[sudo] password for guido:
+guido@Parcial:~/UTNFRA_SO_2do_TP_Gomez/RTA_Examen_20260625$ cd ..
+guido@Parcial:~/UTNFRA_SO_2do_TP_Gomez$ git add .
+guido@Parcial:~/UTNFRA_SO_2do_TP_Gomez$ git commit -m "ADD: Agrego Punto_A.sh"
+Author identity unknown
+*** Please tell me who you are.
+Run
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <guido@Parcial>) not allowed
+
+
+
+
+
+
+
+
+clear
+clear
+cd
+cd UTNFRA_SO_2do_TP_Gomez/
+ls - l
+cd
+cd UTNFRA_SO_2do_TP_Gomez/
+ls - l
+mkdir -p RTA_Examen_20260625/docker
+cp ~/UTN-FRA_SO_Examenes/202406/docker/Dockerfile RTA_Examen_20260625/docker/
+cp ~/UTN-FRA_SO_Examenes/202406/docker/run.sh RTA_Examen_20260625/docker/
+cp ~/UTN-FRA_SO_Examenes/202406/docker/index.html RTA_Examen_20260625/docker/
+ls -la RTA_Examen_20260625/docker/
+vim RTA_Examen_20260625/Punto_C.sh
+cat RTA_Examen_20260625/Punto_C.sh
+history -a
